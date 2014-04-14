@@ -1,0 +1,20 @@
+{
+  "name": "animatedscene",
+  "version": "0.0.1",
+  "description": "animatedscene =====",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwa/animatedscene.git"
+  },
+  "author": "Timothy Groves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gwa/animatedscene/issues"
+  },
+  "homepage": "https://github.com/gwa/animatedscene",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jscs-checker": "^0.4.1"
+  }
+}

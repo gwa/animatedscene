@@ -1,0 +1,25 @@
+{
+  "name": "animatedscene",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gwa/animatedscene",
+  "authors": [
+    "Timothy Groves <groves@greatwhiteark.com>"
+  ],
+  "description": "Animated Scene",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "*.sublime-project",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "grunt",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}
