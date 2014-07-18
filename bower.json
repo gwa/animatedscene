@@ -1,14 +1,6 @@
 {
-  "name": "animatedscene",
-  "version": "0.0.1",
-  "homepage": "https://github.com/gwa/animatedscene",
-  "authors": [
-    "Timothy Groves <groves@greatwhiteark.com>"
-  ],
-  "description": "Animated Scene",
-  "moduleType": [
-    "globals"
-  ],
+  "name": "gwa-animated-scene",
+  "homepage": "https://github.com/gwa/Animated-Scene",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -21,5 +13,11 @@
     "grunt",
     "Gruntfile.js",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "gwa-codestyle": "gwa/codestyle#~1.0.0",
+    "requirejs": "~2.1.14",
+    "gwa-event-dispatcher": "gwa/Event-Dispatcher#~0.0.2",
+    "underscore": "~1.6.0"
+  }
 }

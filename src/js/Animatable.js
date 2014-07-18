@@ -1,20 +1,15 @@
-window.gwa = window.gwa || {};
+/* global define */
+define([], function() {
 
-/**
- * @class AnimatedObject
- * @namespace  gwa
- * @constructor
- */
-(function( ns, $ ) { // jshint ignore:line
-
-	ns.AnimatedObject = function( jq )
-	{
+	return function( obj, setter, w, h ) {
 		var
+			_obj       = obj,
+			_setter    = typeof setter !== 'undefined' ? setter : 'css',
 			_keyframes = [],
 			_calculated,
 			_numframes,
-			_width     = jq.width(),
-			_height    = jq.height();
+			_width     = typeof w !== 'undefined' ? w : obj.width(),
+			_height    = typeof h !== 'undefined' ? h : obj.height();
 
 		/* jshint ignore:start */
 		// EASING FUNCTIONS
@@ -39,6 +34,12 @@ window.gwa = window.gwa || {};
 		}
 		/* jshint ignore:end */
 
+		function _clear() {
+			_keyframes = [];
+			_calculated = null;
+			_numframes = 0;
+		}
+
 		function _addKeyFrame( property, frame, value, easing ) {
 			var easein = false, easeout = false;
 			if (typeof(_keyframes[property]) === 'undefined') {
@@ -54,14 +55,12 @@ window.gwa = window.gwa || {};
 				easein = true;
 				easeout = true;
 			}
-			_keyframes[property].push(
-				{
-					frame: frame,
-					value: value,
-					easein: easein,
-					easeout: easeout
-				}
-			);
+			_keyframes[property].push({
+				frame:   frame,
+				value:   value,
+				easein:  easein,
+				easeout: easeout
+			});
 		}
 
 		function _calculateFrames( numframes ) {
@@ -178,16 +177,12 @@ window.gwa = window.gwa || {};
 				v = _calculated[prop][frame];
 				switch (prop) {
 					case 'scale' :
-						jq.width(_width * v).height(_height * v);
+						_obj.width(_width * v).height(_height * v);
 						break;
 					default :
-						jq.css(prop, v);
+						_obj[_setter](prop, v);
 				}
 			}
-		}
-
-		function _getJq() {
-			return jq;
 		}
 
 		function _getProperties() {
@@ -203,13 +198,13 @@ window.gwa = window.gwa || {};
 		}
 
 		return {
-			addKeyFrame: _addKeyFrame,
-			calculateFrames: _calculateFrames,
-			gotoFrame: _gotoFrame,
-			getAnimatedProperties: _getProperties,
-			getFrameDataForProperty: _getFrameDataForProperty,
-			jq: _getJq
+			clear:                   _clear,
+			addKeyFrame:             _addKeyFrame,
+			calculateFrames:         _calculateFrames,
+			gotoFrame:               _gotoFrame,
+			getAnimatedProperties:   _getProperties,
+			getFrameDataForProperty: _getFrameDataForProperty
 		};
 	};
 
-}(window.gwa, typeof(jQuery) === 'function' ? jQuery : null));
+});

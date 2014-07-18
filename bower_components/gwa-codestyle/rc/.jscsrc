@@ -19,16 +19,30 @@
     "try",
     "catch"
   ],
+  "requireSpaceBeforeBlockStatements": true,
   "requireParenthesesAroundIIFE": true,
+  "requireSpacesInConditionalExpression": {
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": true,
+    "beforeAlternate": true
+  },
   "requireSpacesInFunctionExpression": {
     "beforeOpeningCurlyBrace": true
   },
   "disallowSpacesInFunctionExpression": {
     "beforeOpeningRoundBrace": true
   },
+  "requireSpacesInFunctionDeclaration": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionDeclaration": {
+    "beforeOpeningRoundBrace": true
+  },
   "requireMultipleVarDecl": true,
   "requireBlocksOnNewline": true,
   "disallowEmptyBlocks": true,
+  "disallowSpacesInsideObjectBrackets": true,
   "disallowSpaceAfterObjectKeys": true,
   "requireCommaBeforeLineBreak": true,
   "requireOperatorBeforeLineBreak": [
@@ -47,47 +61,20 @@
     "<",
     "<="
   ],
-  "disallowLeftStickedOperators": [
-    "?",
-    "+",
-    "-",
-    "/",
-    "*",
-    "=",
-    "==",
-    "===",
-    "!=",
-    "!==",
-    ">",
-    ">=",
-    "<",
-    "<="
-  ],
-  "requireRightStickedOperators": ["!"],
   "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
   "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
   "requireSpaceBeforeBinaryOperators": [
+    "=",
     "+",
     "-",
     "/",
     "*",
-    "=",
     "==",
     "===",
     "!=",
     "!=="
-  ],
-  "requireSpaceAfterBinaryOperators": [
-    "+",
-    "-",
-    "/",
-    "*",
-    "=",
-    "==",
-    "===",
-    "!=",
-    "!=="
-  ],
+],
+  "requireSpaceAfterBinaryOperators": true,
   "disallowMultipleLineStrings": true,
   "disallowMultipleLineBreaks": true,
   "validateQuoteMarks": { "mark": "'", "escape": true },

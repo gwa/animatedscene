@@ -1,0 +1,12 @@
+{
+  "name": "gwa-codestyle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwa/codestyle.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+  }
+}
