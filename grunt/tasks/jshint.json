@@ -1,8 +1,0 @@
-{
-  "options": {
-    "jshintrc": true
-  },
-  "src": [
-    "src/*.js"
-  ]
-}

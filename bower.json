@@ -10,7 +10,6 @@
     "bower_components",
     "test",
     "tests",
-    "grunt",
     "Gruntfile.js",
     "package.json"
   ],
