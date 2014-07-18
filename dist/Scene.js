@@ -9,7 +9,7 @@ define(['Gwa.Event.Dispatcher'], function( Dispatcher ) {
 			_cframe     = 0,
 			_int,
 			_intspeed   = Math.round(1000 / framerate),
-			_objects    = [],
+			_timelines  = [],
 			_instance   = {},
 			_dispatcher = new Dispatcher();
 
@@ -21,13 +21,13 @@ define(['Gwa.Event.Dispatcher'], function( Dispatcher ) {
 			_dispatcher.off(ev, func);
 		};
 
-		_instance.addObject = function( obj ) {
-			_objects.push(obj);
+		_instance.addTimeline = function( obj ) {
+			_timelines.push(obj);
 		};
 
 		_instance.render = function() {
-			for (var a in _objects) {
-				_objects[a].calculateFrames(_numframes);
+			for (var a in _timelines) {
+				_timelines[a].calculateFrames(_numframes);
 			}
 			_isrendered = true;
 		};
@@ -39,10 +39,10 @@ define(['Gwa.Event.Dispatcher'], function( Dispatcher ) {
 				this.render();
 			}
 			this.stop();
-			for (a in _objects) {
-				_objects[a].gotoFrame(frame);
+			for (a in _timelines) {
+				_timelines[a].gotoFrame(frame);
 			}
-			this.dispatch('ENTER_FRAME', frame);
+			_dispatcher.dispatch('ENTER_FRAME', frame);
 		};
 
 		_instance.play = function() {
@@ -52,14 +52,14 @@ define(['Gwa.Event.Dispatcher'], function( Dispatcher ) {
 			}
 			_numloops = 0;
 			func = function() {
-				for (var a in _objects) {
-					_objects[a].gotoFrame(_cframe);
+				for (var a in _timelines) {
+					_timelines[a].gotoFrame(_cframe);
 				}
 				_cframe++;
 				if (_cframe > _numframes) {
 					if (_doloop) {
 						_cframe = 0;
-						this.dispatch('LOOP', _numloops);
+						_dispatcher.dispatch('LOOP', _numloops);
 						_numloops++;
 					} else {
 						this.stop();
@@ -71,12 +71,12 @@ define(['Gwa.Event.Dispatcher'], function( Dispatcher ) {
 				func,
 				_intspeed
 			);
-			this.dispatch('PLAY');
+			_dispatcher.dispatch('PLAY');
 		};
 
 		_instance.stop = function() {
 			clearInterval(_int);
-			this.dispatch('STOP');
+			_dispatcher.dispatch('STOP');
 		};
 
 		_instance.gotoAndPlay = function( frame ) {

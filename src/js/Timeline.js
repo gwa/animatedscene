@@ -8,8 +8,8 @@ define([], function() {
 			_keyframes = [],
 			_calculated,
 			_numframes,
-			_width     = typeof w !== 'undefined' ? w : obj.width(),
-			_height    = typeof h !== 'undefined' ? h : obj.height();
+			_width     = typeof w !== 'undefined' ? w : null,
+			_height    = typeof h !== 'undefined' ? h : null;
 
 		/* jshint ignore:start */
 		// EASING FUNCTIONS
@@ -197,13 +197,19 @@ define([], function() {
 			return _calculated[prop][frame];
 		}
 
+		function _setBaseDimensions( w, h ) {
+			_width = w;
+			_height = h;
+		}
+
 		return {
 			clear:                   _clear,
 			addKeyFrame:             _addKeyFrame,
 			calculateFrames:         _calculateFrames,
 			gotoFrame:               _gotoFrame,
 			getAnimatedProperties:   _getProperties,
-			getFrameDataForProperty: _getFrameDataForProperty
+			getFrameDataForProperty: _getFrameDataForProperty,
+			setBaseDimensions:       _setBaseDimensions
 		};
 	};
 

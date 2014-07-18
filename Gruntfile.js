@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 						'bower_components/requirejs/require.js'
 					],
 					specs: [
-						'tests/Animatable.test.js'
+						'tests/*.test.js'
 					],
 					template: require('grunt-template-jasmine-requirejs'),
 					templateOptions: {
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 								'underscore'                 : 'bower_components/underscore/underscore',
 								'Gwa.Event.Dispatcher'       : 'bower_components/gwa-event-dispatcher/dist/Dispatcher',
 								'Gwa.Animation.AbstractData' : 'src/js/AbstractData',
-								'Gwa.Animation.Animatable'   : 'src/js/Animatable',
+								'Gwa.Animation.Timeline'     : 'src/js/Timeline',
 								'Gwa.Animation.Scene'        : 'src/js/Scene'
 							}
 						}
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 				files: [
 					{src:'src/js/Scene.js', dest:'dist/Scene.js'},
 					{src:'src/js/AbstractData.js', dest:'dist/AbstractData.js'},
-					{src:'src/js/Animatable.js', dest:'dist/Animatable.js'}
+					{src:'src/js/Timeline.js', dest:'dist/Timeline.js'}
 				]
 			}
 		},
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 				files: {
 					'dist/Scene.min.js': ['src/js/Scene.js'],
 					'dist/AbstractData.min.js': ['src/js/AbstractData.js'],
-					'dist/Animatable.min.js': ['src/js/Animatable.js']
+					'dist/Timeline.min.js': ['src/js/Timeline.js']
 				}
 			}
 		}
