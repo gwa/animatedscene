@@ -48,18 +48,42 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+			main: {
+				files: [
+					{src:'src/js/Scene.js', dest:'dist/Scene.js'},
+					{src:'src/js/AbstractData.js', dest:'dist/AbstractData.js'},
+					{src:'src/js/Animatable.js', dest:'dist/Animatable.js'}
+				]
+			}
+		},
+
+		uglify: {
+			main: {
+				files: {
+					'dist/Scene.min.js': ['src/js/Scene.js'],
+					'dist/AbstractData.min.js': ['src/js/AbstractData.js'],
+					'dist/Animatable.min.js': ['src/js/Animatable.js']
+				}
+			}
+		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-jscs-checker');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask(
 		'default',
 		[
 			'jscs',
 			'jshint:src',
-			'jasmine'
+			'jasmine',
+			'copy',
+			'uglify'
 		]
 	);
 
