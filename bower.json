@@ -8,6 +8,7 @@
     "*.sublime-project",
     "node_modules",
     "bower_components",
+    "src",
     "test",
     "tests",
     "Gruntfile.js",
