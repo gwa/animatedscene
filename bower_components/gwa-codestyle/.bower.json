@@ -17,7 +17,6 @@
     "commit": "43c4a3e865e19ea4ec0883fe8e670e840093146c"
   },
   "_source": "git://github.com/gwa/codestyle.git",
-  "_target": "~1.0.0",
-  "_originalSource": "gwa/codestyle",
-  "_direct": true
+  "_target": "~1.0",
+  "_originalSource": "gwa/codestyle"
 }

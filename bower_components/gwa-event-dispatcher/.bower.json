@@ -23,15 +23,14 @@
     "requirejs": "~2.1.14"
   },
   "homepage": "https://github.com/gwa/Event-Dispatcher",
-  "version": "0.0.2",
-  "_release": "0.0.2",
+  "version": "0.0.3",
+  "_release": "0.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.0.2",
-    "commit": "b6ce137c89b2c4f8ed76a70d8df0a69e6a9c6132"
+    "tag": "v0.0.3",
+    "commit": "4575fb12840f13d76b9d79f1f7faf9dcae1e85c1"
   },
   "_source": "git://github.com/gwa/Event-Dispatcher.git",
-  "_target": "~0.0.2",
-  "_originalSource": "gwa/Event-Dispatcher",
-  "_direct": true
+  "_target": "~0.0",
+  "_originalSource": "gwa/Event-Dispatcher"
 }

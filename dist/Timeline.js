@@ -1,5 +1,14 @@
 /* global define */
-define([], function() {
+(function( root, factory ) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD: Register as an anonymous module.
+		define([], factory);
+	} else {
+		// GLOBAL: Register to namespace
+		root.gwa = typeof root.gwa === 'undefined' ? {} : root.gwa;
+		root.gwa.AnimationTimeline = factory();
+	}
+}(this, function() {
 
 	return function( obj, setter, w, h ) {
 		var
@@ -213,4 +222,4 @@ define([], function() {
 		};
 	};
 
-});
+}));

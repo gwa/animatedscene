@@ -1,5 +1,14 @@
 /* global define */
-define([], function() {
+(function( root, factory ) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define([], factory);
+	} else {
+		// Browser globals
+		root.gwa = typeof root.gwa === 'undefined' ? {} : root.gwa;
+		root.gwa.EventDispatcher = factory();
+	}
+}(this, function() {
 
 	return function() {
 
@@ -115,4 +124,4 @@ define([], function() {
 
 	};
 
-});
+}));

@@ -15,9 +15,8 @@
     "package.json"
   ],
   "dependencies": {
-    "gwa-codestyle": "gwa/codestyle#~1.0.0",
-    "requirejs": "~2.1.14",
-    "gwa-event-dispatcher": "gwa/Event-Dispatcher#~0.0.2",
-    "underscore": "~1.6.0"
+    "gwa-codestyle": "gwa/codestyle#~1.0",
+    "requirejs": "~2.1",
+    "gwa-event-dispatcher": "gwa/Event-Dispatcher#~0.0"
   }
 }
