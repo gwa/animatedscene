@@ -15,7 +15,7 @@
     "package.json"
   ],
   "dependencies": {
-    "gwa-codestyle": "gwa/codestyle#~1.0",
+    "gwa-codestyle": "gwa/codestyle#~1.*",
     "requirejs": "~2.1"
   },
   "devDependencies": {
