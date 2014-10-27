@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "gwa-codestyle": "gwa/codestyle#~1.0",
-    "requirejs": "~2.1",
+    "requirejs": "~2.1"
+  },
+  "devDependencies": {
     "gwa-event-dispatcher": "gwa/Event-Dispatcher#~0.0"
   }
 }

@@ -2,7 +2,7 @@ define(['Gwa.Animation.Scene', 'Gwa.Animation.AbstractData', 'Gwa.Animation.Time
 
 	var _data, _timeline;
 
-	describe("An Timeline", function() {
+	describe("A Timeline", function() {
 
 		it("can be constructed", function() {
 			_data = new AbstractData(100, 100);

@@ -6,7 +6,7 @@
 	} else {
 		// GLOBAL: Register to namespace
 		root.gwa = typeof root.gwa === 'undefined' ? {} : root.gwa;
-		root.gwa.AnimationScene = factory();
+		root.gwa.AnimatedScene = factory(root.gwa.EventDispatcher);
 	}
 }(this, function( Dispatcher ) {
 
